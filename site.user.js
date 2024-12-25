@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Vision Request Auto Site V4
+// @name         Vision Request Auto Site V2
 // @namespace    https://www.facebook.com/sapienti19/
 // @version      1.0
 // @description  موقع لإنهاء مهمات المزرعة بالريكويست
@@ -16,7 +16,7 @@
 // ==/UserScript==
 
 (function() {
-    // Get host and url then check continue or not//00000000
+    // Get host and url then check continue or not//
     var currentHost = window.location.host;
     var currentUrl = window.location.href;
     if (
