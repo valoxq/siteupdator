@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         Vision Request Auto Site
+// @name         Vision Request Auto Site V2
 // @namespace    https://www.facebook.com/sapienti19/
 // @version      1.0
 // @description  موقع لإنهاء مهمات المزرعة بالريكويست
 // @author       Vision
-// @match        https://vision-tester.neocities.org/ 
+// @match        https://vision-tester.neocities.org/
 // @match        *.centurygames.com/*
-// @updateURL    https://gitfront.io/r/valoxq/3Ngm1PXRj6p6/siteupdator/raw/site.user.js
-// @downloadURL  https://gitfront.io/r/valoxq/3Ngm1PXRj6p6/siteupdator/raw/site.user.js
+// @updateURL    https://raw.githubusercontent.com/valoxq/siteupdator/main/site.user.js
+// @downloadURL  https://raw.githubusercontent.com/valoxq/siteupdator/main/site.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=centurygames.com
 // @grant        unsafeWindow
 // @grant        GM_setValue
