@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Vision Request Auto Site V2
+// @name         Vision Request Auto Site V4
 // @namespace    https://www.facebook.com/sapienti19/
 // @version      1.0
 // @description  موقع لإنهاء مهمات المزرعة بالريكويست
