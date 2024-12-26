@@ -16,7 +16,7 @@
 // ==/UserScript==
 
 (function() {
-    // Get host and url then check continue or not//
+    // Get host and url then check continue or not//0000
     var currentHost = window.location.host;
     var currentUrl = window.location.href;
     if (
