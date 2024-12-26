@@ -6,8 +6,8 @@
 // @author       Vision
 // @match        https://vision-tester.neocities.org/
 // @match        *.centurygames.com/*
-// @updateURL    https://gitfront.io/r/valoxq/mqjr8hQgWVbM/siteupdator/raw/site.user.js
-// @downloadURL  https://gitfront.io/r/valoxq/mqjr8hQgWVbM/siteupdator/raw/site.user.js
+// @updateURL    https://github.com/valoxq/siteupdator/raw/refs/heads/main/site.user.js
+// @downloadURL  https://github.com/valoxq/siteupdator/raw/refs/heads/main/site.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=centurygames.com
 // @grant        unsafeWindow
 // @grant        GM_setValue
