@@ -16,6 +16,36 @@
 // ==/UserScript==
 
 (function() {
+    // Function to check for updates
+    function checkForUpdate() {
+        const metaUrl = 'https://s.id/VSNxSite'; // URL to your metadata file
+
+        GM_xmlhttpRequest({
+            method: 'GET',
+            url: metaUrl,
+            onload: function(response) {
+                const metaContent = response.responseText;
+                const versionMatch = metaContent.match(/@version\s+([\d.]+)/);
+                if (versionMatch) {
+                    const latestVersion = versionMatch[1];
+                    const currentVersion = '1.0'; // Update this to your current version
+
+                    if (latestVersion !== currentVersion) {
+                        alert(`A new version (${latestVersion}) is available!`);
+                        // Optionally, you can redirect the user to the download URL
+                        // window.open('https://s.id/VSNxSite');
+                    }
+                }
+            },
+            onerror: function() {
+                console.error('Failed to check for updates.');
+            }
+        });
+    }
+
+    // Call the update check function
+    checkForUpdate();
+
     // Retrieve Host , Url and the current value of 'check', default to 0 if not set //
     let checkValue = GM_getValue("check", 0);
     GM_setValue("check", 0);
