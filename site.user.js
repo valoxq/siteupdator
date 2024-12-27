@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Vision Request Auto Site for Differences
+// @name         Vision Missions Auto Site
 // @namespace    https://www.facebook.com/sapienti19/
 // @version      1.0
 // @description  موقع لإنهاء مهمات المزرعة بالريكويست
@@ -15,13 +15,35 @@
 // @run-at       document-end
 // ==/UserScript==
 
-(function() {
+(async function() {
 
     // Retrieve Host , Url and the current value of 'check', default to 0 if not set //
     let checkValue = GM_getValue("check", 0);
     GM_setValue("check", 0);
     var currentHost = window.location.host;
     var currentUrl = window.location.href;
+    // Check if user is allowed or not//
+    if (
+    currentHost === "farm-us.centurygames.com" ||
+    currentHost === "farm-th.centurygames.com" ||
+    currentHost === "farm-fr.centurygames.com"
+    ) {
+    fetch('https://api.ipify.org?format=json')
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            let ip = data.ip;
+            const allowedIps = ['1.1.1.1', '1.5.6.1', '156.221.122.74'];
+            if (!allowedIps.includes(ip)) {
+                GM_setValue('runIndex', 0);
+                GM_setValue('inputCodeValue', "");
+                alert("غير مسموح لك باستخدام الموقع...... جارى الإغلاق");
+                window.location.href = 'https://vision-tester.neocities.org/';
+                return;
+            }
+        })
+    }
     // Check if the current host is allowed //
     if (
         currentHost !== "farm-us.centurygames.com" &&
@@ -288,6 +310,7 @@
     const overlaySignature = document.createElement('div');
     overlaySignature.className = 'signature';
     overlaySignature.textContent = 'By: Ahmed Khalil';
+    overlaySignature.style.cssText = 'margin: 10px 0px -30px 0px;';
     overlayContainer.appendChild(overlaySignature);
 
     const title = document.createElement('h1');
@@ -480,20 +503,7 @@
         let level = 1;
         let levels = 30;
         let timeleft = 51.308;
-
-        var counterDisplay = document.createElement("div");
-        counterDisplay.innerHTML = "<span id='counterText'></span>"
-        counterDisplay.style.cssText = "position: absolute; top: 3px; left:460px; margin-top: 50px; background: #f9eca5; border: 2px solid #fbf2d2; border-radius: 5px; padding: 2.5px 2.5px; font-size: 14px; font-weight: bold; color: #472424; user-select: none;"
-        document.body.appendChild(counterDisplay);
-
-        var logo = document.createElement("div");
-        logo.innerHTML = "<img src='https://iili.io/JSqe02S.png' alt='Logo'>";
-        logo.style.cssText = "position: absolute; top: 75px; left: 214px;";
-        document.body.appendChild(logo);
-
         var userName = unsafeWindow.currentUserInfo.name;
-
-        document.getElementById('counterText').innerText = "تم إنهاء "+(level-1)+" مستوى المتبقى "+levels+" مستوى";
 
         for (let cycle = 1; cycle <= 5; cycle++){
         var start_data = {
@@ -510,7 +520,6 @@
            level++;
            levels--;
            timeleft++;
-        document.getElementById('counterText').innerText = "تم إنهاء "+(level-1)+" مستوى المتبقى "+levels+" مستوى";
         }
         var data_use_g = {
          action : "useGift",
@@ -532,15 +541,11 @@
         level++;
         levels--;
         timeleft++;
-        document.getElementById('counterText').innerText = "تم إنهاء "+(level-1)+" مستوى المتبقى "+levels+" مستوى";
         }
-        unsafeWindow.ConfirmView.Show("تم\nإنهاء مهمة الاختلافات\nبالتوفيق\n\nِAhmed Khalil")
-        counterDisplay.remove();
-        logo.remove();
         spinner.style.cssText = 'display: none;';
         img.style.cssText = "display: block; width: 135px; height: 135px; border-radius: 20%; margin-bottom: 25px; image-rendering: crisp-edges;";
-        alarm.play();
         title.innerHTML = "تم إنهاء مهمة الاختلافات للعضو<br>"+userName+"";
+        alarm.play();
       }
         if (runIndex === 1) {
             Cheat();
