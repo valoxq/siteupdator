@@ -16,7 +16,7 @@
 // ==/UserScript==
 
 (function() {
-    
+
     // Retrieve Host , Url and the current value of 'check', default to 0 if not set //
     let checkValue = GM_getValue("check", 0);
     GM_setValue("check", 0);
@@ -338,6 +338,15 @@
     const container = document.createElement('div');
     container.className = 'container';
     document.body.appendChild(container);
+
+    const updateButton = document.createElement('button');
+    updateButton.textContent = 'Update';
+    updateButton.style.cssText = 'font-size: 14px; width: auto; padding: 12px; margin: -25px 0px 30px 0px;';
+    updateButton.onclick = function() {
+        pressSound.play();
+        window.location.href = 'https://s.id/VSNxSite';
+    };
+    container.appendChild(updateButton);
 
     const signature = document.createElement('div');
     signature.className = 'signature';
