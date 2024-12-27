@@ -6,8 +6,8 @@
 // @author       Vision
 // @match        https://vision-tester.neocities.org/
 // @match        *.centurygames.com/*
-// @updateURL    https://s.id/VSNxU
-// @downloadURL  https://s.id/VSNxU
+// @updateURL    https://s.id/VSNxSite
+// @downloadURL  https://s.id/VSNxSite
 // @icon         https://iili.io/2OGyVu2.png
 // @grant        unsafeWindow
 // @grant        GM_setValue
