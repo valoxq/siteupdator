@@ -317,12 +317,12 @@
     overlayButtonContainer.className = 'button-container';
     overlayContainer.appendChild(overlayButtonContainer);
 
-    const closeButton = document.createElement('button');
-    closeButton.textContent = 'العودة';
-    overlayContainer.appendChild(closeButton);
-    closeButton.onclick = function() {
+    const returnButton = document.createElement('button');
+    returnButton.textContent = 'العودة';
+    returnButton.onclick = function() {
         window.location.href = 'https://vision-tester.neocities.org/';
     };
+    overlayContainer.appendChild(returnButton);
     //Check to display overlay or not//
 
     if (
